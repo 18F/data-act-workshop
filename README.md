@@ -1,4 +1,4 @@
-# DATA Act Agile Workshop - March 25th-26th
+## DATA Act Agile Workshop - March 25th-26th
 
 This repo contains a basic python/flask project with protofbuf support. 
 
