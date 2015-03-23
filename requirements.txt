@@ -2,4 +2,4 @@ flask
 protobuf
 psycopg2
 Flask-SQLAlchemy
-
+ipython
