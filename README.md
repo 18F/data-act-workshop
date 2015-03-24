@@ -35,6 +35,26 @@ The current working protobuf messages are in [this repo](https://github.com/18F/
 
 The Flask application should now be running at  [http://localhost:5000/](http://localhost:5000/).
 
+### Running the Flask app using Vagrant
+
+1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+2. Install [Vagrant](http://www.vagrantup.com/downloads.html)
+3. From project root directory, run: 
+
+         $ vagrant up
+
+4. Once the VM is fully started and provisioned (~5 minutes), connect to it with:
+
+        $ vagrant ssh
+        
+5. The project directory on your host machine is shared with the VM at `/vagrant`. Navigate there, load the virtualenv, and start the Flask application:
+
+        $ cd /vagrant
+        $ workon data-act-workshop
+        $ python data.py
+        
+The Flask app should now be accessible from the host machine at [http://localhost:5050/](http://localhost:5050/). Because the project directory on your host machine is shared with the VM, you can use your existing tools (IDE, browser, etc.) and everything will be synced with the VM.
+        
 ### Resources
 
 A list of things that might be useful during the workshop.
