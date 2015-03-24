@@ -53,6 +53,8 @@ The Flask application should now be running at  [http://localhost:5000/](http://
         $ workon data-act-workshop
         $ python data.py
         
+The Flask app should now be accessible from the host machine at [http://localhost:5050/](http://localhost:5050/). Because the project directory on your host machine is shared with the VM, you can use your existing tools (IDE, browser, etc.) and everything will be synced with the VM.
+        
 ### Resources
 
 A list of things that might be useful during the workshop.
