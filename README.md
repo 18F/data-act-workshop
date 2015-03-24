@@ -47,7 +47,7 @@ The Flask application should now be running at  [http://localhost:5000/](http://
 
         $ vagrant ssh
         
-5. The project directory on your host machine is shared with the VM at `/vagrant'. Navigate there, load the virtualenv, and start the Flask application:
+5. The project directory on your host machine is shared with the VM at `/vagrant`. Navigate there, load the virtualenv, and start the Flask application:
 
         $ cd /vagrant
         $ workon data-act-workshop
