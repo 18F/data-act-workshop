@@ -58,7 +58,7 @@ The Flask app should now be accessible from the host machine at [http://localhos
 ### Deploying to Cloud Foundry
 
 1. Login to Cloud Foundry using the directions here: [https://docs.cf.18f.us/getting-started/](https://docs.cf.18f.us/getting-started/)
-2. Target the org and space: `cf target -o cf target -o data-act -s workshop`
+2. Target the org and space: `cf target -o data-act -s workshop`
 3. From the root of the project directory run this command: `cf push data -b https://github.com/18F/python-buildpack.git`
 
 ### Resources
