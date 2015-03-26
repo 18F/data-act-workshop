@@ -18,7 +18,8 @@ def validate_outlays_match_current_amount(data):
         return (True, {})
 
 validators = [
-  validate_has_amount
+  validate_has_amount,
+  validate_outlays_match_current_amount
 ]
 
 def validate(data):
