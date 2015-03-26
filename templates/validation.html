@@ -3,7 +3,7 @@
     <ul>
     {% if context.errors %}
     {% for error in context.errors %}
-        <li>{{ error.location }} {{ error.error }}</li>
+        <li>{{ error.location }} - {{ error.error }}</li>
     {% endfor %}
     {% else %}
         <li>No validation errors found</li>
