@@ -3,16 +3,12 @@ import os
 from flask import Flask
 from flask import render_template
 
+import csv_reader
 import validator
 
 app = Flask(__name__)
 
-test_data = {
-  'agency': 'FWS',
-  'currentAmount': 500,
-  'initialAmount': 1000,
-  'outlays': 500
-}
+CSV_LOCATION = 'upload/data.csv'
 
 @app.route("/")
 def hello():
@@ -20,7 +16,7 @@ def hello():
 
 @app.route("/submission/validation")
 def validation():
-    data = test_data
+    data = csv_reader.read_csv(CSV_LOCATION)
     errors = validator.validate(data)
     context = {
         'errors': errors

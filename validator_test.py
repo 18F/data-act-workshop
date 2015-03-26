@@ -7,7 +7,7 @@ class TestValidators(unittest.TestCase):
         data = {}
         errors = validator.validate_has_amount(data)
         self.assertFalse(errors[0], 'Validator fails with missing currentAmount')
-        
+
         data['currentAmount'] = 100
         errors = validator.validate_has_amount(data)
         self.assertTrue(errors[0], 'Validator passes')
