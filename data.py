@@ -31,7 +31,7 @@ def upload():
     if request.method == 'POST':
         datafile = request.files['file']
         filename = secure_filename(datafile.filename)
-        datafile.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        datafile.save(os.path.join(app.config['UPLOAD_FOLDER'], 'data.csv'))
         return render_template('upload.html', status='complete')
     return render_template('upload.html', status='incomplete')
 
