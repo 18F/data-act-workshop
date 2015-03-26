@@ -5,6 +5,7 @@ from flask import render_template, request, redirect, url_for
 from flask import send_from_directory
 from werkzeug import secure_filename
 
+import csv_reader
 import validator
 
 app = Flask(__name__)
@@ -18,13 +19,16 @@ test_data = {
   'outlays': 500
 }
 
+CSV_LOCATION = 'upload/data.csv'
+
+
 @app.route("/")
 def hello():
     return "Hello World!"
 
 @app.route("/submission/validation")
 def validation():
-    data = test_data
+    data = csv_reader.read_csv(CSV_LOCATION)
     errors = validator.validate(data)
     context = {
         'errors': errors
