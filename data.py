@@ -35,6 +35,8 @@ def upload():
         return render_template('upload.html',
                                status='complete',
                                filename=filename)
+        datafile.save(os.path.join(app.config['UPLOAD_FOLDER'], 'data.csv'))
+        return render_template('upload.html', status='complete')
     return render_template('upload.html', status='incomplete')
 
 @app.route('/uploads/<filename>')
