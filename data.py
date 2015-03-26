@@ -11,16 +11,7 @@ import validator
 app = Flask(__name__)
 
 UPLOAD_FOLDER = 'uploads/'
-
-test_data = {
-  'agency': 'FWS',
-  'currentAmount': 501,
-  'initialAmount': 1000,
-  'outlays': 500
-}
-
-CSV_LOCATION = 'upload/data.csv'
-
+CSV_LOCATION = 'uploads/data.csv'
 
 @app.route("/")
 def hello():
@@ -41,8 +32,8 @@ def upload():
         datafile = request.files['file']
         filename = secure_filename(datafile.filename)
         datafile.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return "Uploaded"
-    return render_template('upload.html')
+        return render_template('upload.html', status='complete')
+    return render_template('upload.html', status='incomplete')
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
