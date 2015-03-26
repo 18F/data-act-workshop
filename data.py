@@ -2,7 +2,6 @@ import os
 
 from flask import Flask
 from flask import render_template, request, redirect, url_for
-from flask import send_from_directory
 from werkzeug import secure_filename
 
 import csv_reader
@@ -15,7 +14,7 @@ CSV_LOCATION = 'uploads/data.csv'
 
 @app.route("/")
 def hello():
-    return "Hello World!"
+    return redirect(url_for('upload'))
 
 @app.route("/submission/validation")
 def validation():
@@ -39,10 +38,11 @@ def upload():
         return render_template('upload.html', status='complete')
     return render_template('upload.html', status='incomplete')
 
-@app.route('/uploads/<filename>')
-def uploaded_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'],
-                               filename)
+@app.route("/submission/submitted")
+def submitted():
+    return render_template('submitted.html')
+
+
 
 
 if __name__ == "__main__":
