@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+{% if error %}
+<h1>Validation Error!</h1>
+<p>Uh oh. There's an error:</p>
+<p><code>{{error}}</code></p>
+<hr>
+{% endif %}
+<h1>Collect the Data here</h1>
+<form action="/file-upload"
+      class="dropzone"
+      id="my-awesome-dropzone"></form>
+<h2>Validate the Data</h2>
+{% if error %}<a href="/success">{%else%}<a href="/error">{%endif%}<button class="btn btn-success"><i class="glyphicon glyphicon-ok"></i> Validate Data</button></a>
+</form>
+{% endblock %}
