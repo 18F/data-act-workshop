@@ -1,10 +1,12 @@
-{ % extends base.html % }
-{ % block content % }
+{% extends "base.html" %}
+{% block content %}
     <ul>
-    { % for error in errors % }
+    {% if context.errors %}
+    {% for error in context.errors %}
         <li>{{ error.location }} {{ error.error }}</li>
-    { % else % }
+    {% endfor %}
+    {% else %}
         <li>No validation errors found</li>
-    { % endfor % }
+    {% endif %}
     </ul>
-{ % endblock content% }
+{% endblock content%}

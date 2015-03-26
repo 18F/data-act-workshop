@@ -25,7 +25,7 @@ def validation():
     context = {
         'errors': errors
     }
-    return render_template('base.html', context=context)
+    return render_template('validation.html', context=context)
 
 if __name__ == "__main__":
 
