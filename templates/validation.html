@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-    <ul>
     {% if context.errors %}
     {% for error in context.errors %}
+    <ul>
         <li>{{ error.location }} - {{ error.error }}</li>
-    {% endfor %}
-    {% else %}
-        <li>No validation errors found</li>
-    {% endif %}
     </ul>
-    <a href="/submission/upload">Upload again</a>
+    {% endfor %}
+    Fix your errors and <a href="/submission/upload">upload again</a>
+    {% else %}
+        No validation errors found!
+        <form action="/submission/submitted">
+            <input type="submit" value="Submit to Treasury">
+        </form>
+    {% endif %}
 {% endblock content%}
