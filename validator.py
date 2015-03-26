@@ -6,6 +6,13 @@ def validate_has_amount(data):
         return (False, {
             'error': 'Missing current amount'})
 
+def validate_has_agency(data):
+    if data.get('Agency'):
+        return (True, {})
+    else:
+        return (False, {
+            'error': 'Missing agency'})
+
 def validate_outlays_match_current_amount(data):
     if data.get('currentAmount', 0) + data.get('outlays', 0) \
             != data.get('initialAmount', 0):
@@ -16,6 +23,7 @@ def validate_outlays_match_current_amount(data):
         return (True, {})
 
 validators = [
+  validate_has_agency,
   validate_has_amount,
   validate_outlays_match_current_amount
 ]
