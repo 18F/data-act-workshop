@@ -1,0 +1,32 @@
+As product owner I'd like to align on language/definitions for Taxonomy, schema, format, map files
+
+
+Data Act Schema: The set of schemata that model all data elements mandated by the DATA Act.
+
+The Taxonomy: The XML implementation of the DATA Act Schema
+
+The Broker: PWC's application that performs Data Access, moves the agency data through the Mapping Phase, validates the data using the Rules Engine, and communicates the results via the Communications layer.
+
+Mapping Phase: Translation of agency data into the Data Act Schema.
+
+Data Access: The retrieval of agency data from the agency's data store.
+
+Validation: Verifies data integrity, completeness, and fitness for purpose. This includes basic checks for data type and dimension, but also more complex calculations.
+
+Rules Engine: A system that runs validation rules against data represented using the DATA Act Schema.
+
+Communications Layer: The REST-ful web service that delivers the validated data in a range of formats.
+
+Mapping definitions: A set of definitions describing the equivalance between elements of different schemas, specifically Agency schema vs DATA act schema
+
+Blueprints: The conceptual model and macro model documents put together and distributed by Treasury
+
+Account: Thou shalt not use this word. Instead, specify USSGL Account, TAS, etc.
+
+Award: Generic term for contracts, loans, grants, insurance, etc.
+
+Budget Object Class (or BOC): Synonym of Object Class
+
+Program: An overarching activity supporting multiple awards. More specific than object class. OMB has a set of programs definitions that are written into the budget, but agencies often create their own, more granular programs as well.
+
+Spending activity: Parent term for outlays, payments, etc.
