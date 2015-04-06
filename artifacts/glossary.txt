@@ -1,7 +1,7 @@
 As product owner I'd like to align on language/definitions for Taxonomy, schema, format, map files
 
 
-Data Act Schema: The set of schemata that model all data elements mandated by the DATA Act.
+Data Act Schema: The set of schemata that model all data elements mandated by the DATA Act. A schemata includes three components: visual representation, technical representation, and prose definitions of the included data elements.
 
 The Taxonomy: The XML implementation of the DATA Act Schema
 
