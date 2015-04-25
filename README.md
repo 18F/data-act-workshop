@@ -39,22 +39,28 @@ The Flask application should now be running at  [http://localhost:5000/](http://
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 2. Install [Vagrant](http://www.vagrantup.com/downloads.html)
-3. From project root directory, run: 
+3. From project root directory, run:
 
          $ vagrant up
 
 4. Once the VM is fully started and provisioned (~5 minutes), connect to it with:
 
         $ vagrant ssh
-        
+
 5. The project directory on your host machine is shared with the VM at `/vagrant`. Navigate there, load the virtualenv, and start the Flask application:
 
         $ cd /vagrant
         $ workon data-act-workshop
         $ python data.py
-        
+
 The Flask app should now be accessible from the host machine at [http://localhost:5050/](http://localhost:5050/). Because the project directory on your host machine is shared with the VM, you can use your existing tools (IDE, browser, etc.) and everything will be synced with the VM.
-        
+
+### Deploying to Cloud Foundry
+
+1. Login to Cloud Foundry using the directions here: [https://docs.cf.18f.us/getting-started/](https://docs.cf.18f.us/getting-started/)
+2. Target the org and space: `cf target -o data-act -s workshop`
+3. From the root of the project directory run this command: `cf push data -b https://github.com/18F/python-buildpack.git`
+
 ### Resources
 
 A list of things that might be useful during the workshop.
