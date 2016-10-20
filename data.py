@@ -10,6 +10,6 @@ def hello():
 
 if __name__ == "__main__":
     
-    port = os.getenv('VCAP_APP_PORT', '5000')
+    port = os.getenv('PORT', '5000')
     
     app.run(port=int(port), host='0.0.0.0')
